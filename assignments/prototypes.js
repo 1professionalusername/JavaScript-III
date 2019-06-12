@@ -8,6 +8,10 @@
   Each constructor function has unique properties and methods that are defined in their block comments below:
 */
   
+
+
+
+
 /*
   === GameObject ===
   * createdAt
@@ -16,12 +20,24 @@
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
 
+
+  //attributes
+
+
+
+
+
 /*
   === CharacterStats ===
   * healthPoints
   * takeDamage() // prototype method -> returns the string '<object name> took damage.'
   * should inherit destroy() from GameObject's prototype
 */
+
+
+
+
+
 
 /*
   === Humanoid (Having an appearance or character resembling that of a human.) ===
@@ -39,6 +55,23 @@
   * Instances of CharacterStats should have all of the same properties as GameObject.
 */
 
+
+function GameObject(name) {
+this.name = name
+} 
+
+GameObjects.prototype.destroy = function() {
+
+}
+
+  function CharacterStats() {
+
+  } 
+
+  CharacterStats.prototype = object.create()
+  function Humanoid() {
+
+  }
 // Test you work by un-commenting these 3 objects and the list of console logs below:
 
 /*
