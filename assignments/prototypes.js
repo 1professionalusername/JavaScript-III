@@ -56,22 +56,31 @@
 */
 
 
-function GameObject(name) {
-this.name = name
+function GameObject(attributes) {
+this.name = attributes.name
 } 
 
-GameObjects.prototype.destroy = function() {
-
+GameObject.prototype.destroy = function() {
 }
 
-  function CharacterStats() {
-
+  function CharacterStats(attributes) {
+    GameObject.call(this, attributes)
   } 
 
-  CharacterStats.prototype = object.create()
-  function Humanoid() {
-
+  CharacterStats.prototype = Object.create(GameObject.prototype)
+  CharacterStats.prototype.takeDamage = function() {
   }
+  function Humanoid(attributes) {
+    CharacterStats.call(this, attributes)
+  }
+
+  Humanoid.prototype = Object.create(CharacterStats.prototype)
+  Humanoid.prototype.greet = function() {
+  }
+
+  new Humanoid({
+    name: 'Brandon'
+  })
 // Test you work by un-commenting these 3 objects and the list of console logs below:
 
 /*

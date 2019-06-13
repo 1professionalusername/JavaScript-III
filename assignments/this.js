@@ -21,40 +21,44 @@ function greeting(name) {
   console.log(greeting("Holla, Holla, Holla!!!"));
 
 
-
 // Principle 2
 
 // code example for Implicit Binding
 
-function cool(){
-	return(this.number);
-}
-
-var obj = {
-	number:2,
-	cool:cool
-};
-
-console.log(obj.cool());
-
-var MyObject = function (){
-    this.name = 'MyObjectName';
-    this.myProperty = 'property';
-  };
- 
-  MyObject.prototype.doStuff = function (action) {
-    return (this.name + ' is ' + action + '!');
+const oldMan = {
+    name: 'Methuselah',
+    age: 969,
+    announceName () {
+      return(`Hello, my name is ${this.name}`)
+    }
   }
  
-  var obj = new MyObject();
- 
-  console.log(obj.doStuff('awesome')); // prints 'MyObjectName is awesome!'
+  console.log(oldMan.announceName())
+
 
 
 // Principle 3
 
 // code example for New Binding
 
+
+function OldMan (name, age) {
+  
+    this.name = name
+    this.age = age
+    this.speak = function() {
+        console.log(`${this.name} ${this.age}`);
+        return (this);
+    }
+  }
+  
+  const dude = new OldMan('Methuselah', 969)
+
+  console.log(dude.speak());
+
+
+
 // Principle 4
 
 // code example for Explicit Binding
+
